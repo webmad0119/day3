@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>JS</title>
+		<meta charset="utf-8">		
+	</head>
+
+	<body>
+
+
+		<h1>JS | Objects</h1>
+		<div id="result"></div>
+
+
+
+		<script>	
+
+
+
+
+		// literal object declaration structure
+		var objName = {
+			keyOne: 	'value 1',
+			keyTwo: 	'value 2',
+			keyThree: 	'value 3',
+			keyN: 		'value n'
+		}
+
+
+		// literal object access
+		console.log(objName);				// full object
+		console.log(objName.keyTwo);		// dot notation
+		console.log(objName['keyThree']); 	// brackets notation
+
+
+
+
+
+
+
+
+		// object declaration
+		var student = {
+			firstName: 'Germán',
+			surname: 'Álvarez',
+			age: 32,
+			height: 1.72,
+			celiac: false,
+			birth: new Date(1986,2,10),
+			allergies: undefined,
+			hobbies: ['Escalada', 'Gadgets'],
+			courses: {
+				js: {
+					name: 'Javascript puro',
+					hours: 240,
+					passed: true
+				},
+				node: {
+					name: 'NodeJS',
+					hours: 320,
+					passed: true
+				},
+				mongo: {
+					name: 'MongoDB',
+					hours: 50,
+					passed: false
+				}
+			},
+			salary: {
+				base: 2890,
+				IRPF: 320
+			}
+		}
+
+		console.log(student.presentation);
+
+		student.shout('¡Yabadabadú!');
+
+		
+
+
+
+
+
+
+
+
+
+
+
+		// add external property
+		student.glasses = true;		
+
+		if (student.glasses) {			
+			console.log('Y utiliza lentes');
+		}
+
+
+
+
+
+
+
+
+
+		// update property value 
+		student.age = 33;				// set value
+		console.log(student.age);		// get value
+
+
+
+
+
+
+
+
+		// check existance of property
+		console.log('age' in student);			// true
+
+
+
+
+
+
+
+		// delete property
+		console.log(student.birth);
+		delete student.birth;
+		console.log(student.birth);
+
+
+
+
+
+
+
+		// iteration basic
+		for (i in student) {
+			console.log(student[i])
+		}
+
+
+
+
+
+
+		// semantic keys iteration
+		var keysArr = Object.keys(student);
+		console.log(keysArr);
+
+
+
+
+
+
+
+		// semantic values iteration
+		var valuesArr = Object.values(student);
+		console.log(valuesArr);
+
+
+
+
+
+
+
+
+		// add new element at the end of Array
+		console.log(student.hobbies);
+		student.hobbies.push('Programación', 'Gamificación');
+		console.log(student.hobbies);
+
+
+
+
+	
+
+
+		</script>
+
+	</body>
+</html>
